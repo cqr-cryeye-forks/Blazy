@@ -1,3 +1,8 @@
-mechanize
-bs4
-lxml
+backports.functools-lru-cache==1.6.4
+beautifulsoup4==4.9.3
+html5lib==1.1
+lxml==4.6.3
+mechanize==0.4.5
+six==1.16.0
+soupsieve==1.9.6
+webencodings==0.5.1
