@@ -154,6 +154,7 @@ class Blazy:
     def save_results(self, output: str = BASE_OUTPUT_PATH):
         self.log(f'Saving data into {output}')
         data = {
+            "url": self.scan_url,
             'findings': self.results,
             'extra': self.extra,
         }

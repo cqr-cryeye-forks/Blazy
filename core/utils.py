@@ -35,7 +35,7 @@ def wordlist_p(file_path) -> list[str]:  # Loads passwords from passwords.txt
 def save_data(data: dict | list, file_path: str | Path):
     try:
         with open(file_path, 'w') as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=2)
     except OSError as e:  # handle all times of possible file issues
         print(f"{RED}[-]{BOLD} Error on saving data: {e}!")
         quit()
