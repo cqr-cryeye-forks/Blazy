@@ -1,8 +1,8 @@
 backports.functools-lru-cache==1.6.4
-beautifulsoup4==4.9.3
+beautifulsoup4==4.11.1
 html5lib==1.1
-lxml==4.6.3
-mechanize==0.4.5
+lxml==4.9.1
+mechanize==0.4.8
 six==1.16.0
-soupsieve==1.9.6
+soupsieve==2.3.2.post1
 webencodings==0.5.1
