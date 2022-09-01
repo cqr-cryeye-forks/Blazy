@@ -78,10 +78,10 @@ class Blazy:
                 pass
 
     def find(self, forms: list):  # Function for finding forms
-        if forms:
-            print(f'{GREEN}[+]{END} Found {len(forms)} forms')
-        else:
+        if not forms:
             print(f'{RED}[-]{END} No forms found')
+            return
+        print(f'{GREEN}[+]{END} Found {len(forms)} forms')
         for form_number, form in enumerate(forms):  # Finds all the forms in the webpage
             form_data = str(form)  # Converts the response received to string
             if username := search(r'<TextControl\([^<]*=\)>', form_data):
@@ -147,6 +147,7 @@ class Blazy:
                                 'related_username_form': username_input,
                                 'password': password,
                                 'related_password_form': passwd_input,
+                                'target_url': self.scan_url,
                             })
                             if not self.all:
                                 return
