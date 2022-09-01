@@ -1,6 +1,6 @@
 from http import cookiejar
 
-from mechanize import HTTPRefreshProcessor, Browser
+from mechanize import HTTPRefreshProcessor, Browser, FormNotFoundError
 
 
 class BlazyBrowser:
@@ -36,8 +36,13 @@ class BlazyBrowser:
 
     def process_form(self, url: str, username_input: str, passwd_input: str, form_name: str, option: str,
                      username: str, password: str, form_number: int = 0, menu: bool = False):
-        self.br.open(url)
-        self.br.select_form(nr=form_number)
+        try:
+            self.br.open(url)
+            self.br.select_form(nr=form_number)
+        except Exception as e:
+            # TODO save error to output, so user can know what passwords was skipped
+            print(f'\nRequest is not processed: {e}')
+            return ''
         self.br.form[username_input] = username
         self.br.form[passwd_input] = password
         if menu:

@@ -10,7 +10,7 @@ def print_data(message: str, verbose: bool = True):
 
 
 def can_not_use_brute_force(username, error: Exception):
-    print(f'\r{RED}[!]{END} Cannot use brute force with user {username}:')
+    print(f'\r{RED}[!]{END} Cannot use brute force with user: {username}')
     print(f'\r\t[Error: {error}]')
 
 
